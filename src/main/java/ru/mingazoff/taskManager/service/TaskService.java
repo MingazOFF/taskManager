@@ -13,17 +13,32 @@ import ru.mingazoff.taskManager.repository.TaskRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This is Task service class.
+ */
 @Service
 @AllArgsConstructor
 public class TaskService {
     private final TaskRepository taskRepository;
 
+    /**
+     * Create task.
+     *
+     * @param task the task for save
+     * @return the createdTask id from DB
+     */
     @LogAround
     public int createTask(Task task) {
         Task savedTask = taskRepository.save(task);
         return savedTask.getId();
     }
 
+    /**
+     * Gets task by id from DB.
+     *
+     * @param id the id
+     * @return the task by id
+     */
     @LogBefore
     @LogAfterReturning
     @LogAfterThrowing
@@ -34,6 +49,13 @@ public class TaskService {
 
     }
 
+    /**
+     * Update task.
+     *
+     * @param id the task id
+     * @param toUpdateTask the to update task
+     * @return the updatedTask
+     */
     @LogBefore
     @LogAfterReturning
     @LogAfterThrowing
@@ -46,6 +68,11 @@ public class TaskService {
         return taskRepository.save(taskFromDB);
     }
 
+    /**
+     * Delete task by id.
+     *
+     * @param id the task id
+     */
     @LogBefore
     @LogAfterReturning
     @LogAfterThrowing
@@ -58,6 +85,11 @@ public class TaskService {
         }
     }
 
+    /**
+     * Gets all tasks.
+     *
+     * @return the all tasks from DB
+     */
     @LogAround
     public List<Task> getAllTasks() {
         return taskRepository.findAll();

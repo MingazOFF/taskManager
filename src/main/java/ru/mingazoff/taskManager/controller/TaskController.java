@@ -10,12 +10,21 @@ import ru.mingazoff.taskManager.service.TaskService;
 
 import java.util.List;
 
+/**
+ * The type Task controller.
+ */
 @RestController
 @RequestMapping("/tasks")
 @AllArgsConstructor
 public class TaskController {
     private final TaskService taskService;
 
+    /**
+     * Create task.
+     *
+     * @param task the task for save
+     * @return the saved Task id
+     */
     @LogBefore
     @PostMapping()
     public ResponseEntity<?> createTask(@RequestBody Task task) {
@@ -23,6 +32,12 @@ public class TaskController {
         return ResponseEntity.ok(id);
     }
 
+    /**
+     * Gets task by id.
+     *
+     * @param id the Task id
+     * @return the task by id from DB
+     */
     @LogBefore
     @GetMapping("/{id}")
     public ResponseEntity<?> getTaskById(@PathVariable int id) {
@@ -35,6 +50,13 @@ public class TaskController {
 
     }
 
+    /**
+     * Update task.
+     *
+     * @param id   the to update Task id
+     * @param task the task for update
+     * @return the updated Task from DB
+     */
     @LogBefore
     @PutMapping("/{id}")
     public ResponseEntity<?> updateTask(@PathVariable int id, @RequestBody Task task) {
@@ -47,6 +69,12 @@ public class TaskController {
         }
     }
 
+    /**
+     * Delete task by id.
+     *
+     * @param id the Task id
+     * @return delete status
+     */
     @LogBefore
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteTaskById(@PathVariable int id) {
@@ -58,6 +86,11 @@ public class TaskController {
         }
     }
 
+    /**
+     * Get all tasks.
+     *
+     * @return all Tasks from DB
+     */
     @LogBefore
     @GetMapping()
     public ResponseEntity<?> getAllTasks(){

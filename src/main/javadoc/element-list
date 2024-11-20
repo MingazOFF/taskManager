@@ -1,0 +1,7 @@
+ru.mingazoff.taskManager
+ru.mingazoff.taskManager.aspect
+ru.mingazoff.taskManager.controller
+ru.mingazoff.taskManager.entity
+ru.mingazoff.taskManager.exception
+ru.mingazoff.taskManager.repository
+ru.mingazoff.taskManager.service

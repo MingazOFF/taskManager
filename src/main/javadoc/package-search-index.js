@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.mingazoff.taskManager"},{"l":"ru.mingazoff.taskManager.aspect"},{"l":"ru.mingazoff.taskManager.controller"},{"l":"ru.mingazoff.taskManager.entity"},{"l":"ru.mingazoff.taskManager.exception"},{"l":"ru.mingazoff.taskManager.repository"},{"l":"ru.mingazoff.taskManager.service"}];updateSearchResults();

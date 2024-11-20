@@ -3,6 +3,9 @@ package ru.mingazoff.taskManager.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**
+ * This is a class that describes a task and a table in the database.
+ */
 @Data
 @Entity
 @Table(name = "task")
